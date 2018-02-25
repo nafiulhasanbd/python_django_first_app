@@ -1,13 +1,35 @@
 <!DOCTYPE html>
 {% load staticfiles %}
-<html>
-  <head>
-    <title>My First Django APps</title>
-    <link rel="stylesheet" href='{% static 'css/style.css' %}'>
-  </head>
-  <body>
-    <h1>Hello this is index.html</h1>
-    {{ insert_me }}
-    <img src='{% static 'images/img.jpg' %}' alt="Oops">
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Django Level Two</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<h1>Hi Welcome to My First Django Project</h1>
+<h2>Here are your access records</h2>
+
+<div class="djangotwo">
+  {% if Access_records %}
+      <table>
+        <thead>
+          <th>Site Name</th>
+          <th>Data Accessed</th>
+        </thead>
+        {% for acc in Access_records %}
+        <tr>
+          <td>{{ acc.name }}</td>
+          <td>{{ acc.date }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+  {% else %}
+      <p>No Access Recoards found</p>
+  {% endif %}
+</div>
+
+</body>
 </html>
