@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <title>My First Django APps</title>
+    <link rel="stylesheet" href='{% static 'css/style.css' %}>'
+  </head>
+  <body>
+    <h1>Hello this is index.html</h1>
+    {{ insert_me }}
+    <img src='{% static 'images/img.jpg' %}' alt="Oops">
+  </body>
+</html>
